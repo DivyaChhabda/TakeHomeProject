@@ -1,0 +1,56 @@
+﻿@model IEnumerable <WebApplication1.tbl_vehicle>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="container jumbotron" style="background-color: blanchedalmond;">
+    <div>
+        <label style="margin-top:32px">Create New Vehicle</label>
+        @Html.DropDownList("Vehicletype", ViewBag.Vehicletype as SelectList, "Select Vehicle", new { @onchange = "dropdownchange(this)", @class = "form-control" })
+    </div>
+    <div style="margin-top:26px">
+    <table class="table table-striped table-bordered" id="datatbl" style="font-size:12px">
+        <thead style="background-color:black;color:white">
+            <tr>
+
+                <th>Vehicle Type</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Engine</th>
+                <th>Body Type</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>@item.ID</td>*@
+                <td>@item.tbl_vehicletype.Vehicle_type_name</td>
+                <td>@item.Make</td>
+                <td>@item.ModelNo</td>
+                <td>@item.Engine</td>
+                <td>@item.Body_type</td>
+            </tr>
+        }
+    </table>
+</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+     
+        var successmsg = '@TempData["successmsg"]';
+        if (successmsg != '') {
+            alert(successmsg);
+        }
+    });
+
+    function dropdownchange(element)
+    {
+       
+       var val= $("#Vehicletype option:selected").text();
+       var id = $("#Vehicletype").val();
+       var data = { ID: id, Vehicle_type_name:val};
+       window.location.href = "Home/CreateVehicle?ID=" + id +"&Vehicle_type_name="+val;
+    }
+
+  
+</script>

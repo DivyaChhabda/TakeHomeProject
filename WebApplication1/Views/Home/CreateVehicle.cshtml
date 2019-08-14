@@ -1,0 +1,76 @@
+﻿@model WebApplication1.ViewModel.VehicleViewModel
+@{
+    ViewBag.Title = "CreateVehicle";
+}
+
+@using (Html.BeginForm("SaveVehicle", "Home"))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h1 class="text-center">Create New @ViewBag.Vehiclename</h1>
+                <label class="label col-md-3 control-label" style="font-size:19px;">Company</label>
+                <div class="col-md-9">
+                    @Html.TextBoxFor(c => c.tblvehicle.Make, new { @class = "form-control", @placeholder = "Enter Company Name", @id = "txtmake", @required = "required" })
+                </div>
+                <label class="label col-md-3 control-label" style="font-size:19px;">Model</label>
+                <div class="col-md-9">
+                    @Html.TextBoxFor(c => c.tblvehicle.ModelNo, new { @class = "form-control", @placeholder = "Enter Model No", @id = "txtmodel",@type="number", @required = "required" })
+                <small style="color:gray">Enter only Number</small>
+                </div>
+                <label class="label col-md-3 control-label" style="font-size:19px;">Engine</label>
+                <div class="col-md-9">
+                    @Html.TextBoxFor(c => c.tblvehicle.Engine, new { @class = "form-control", @placeholder = "Enter Engine", @id = "txtengine", @required = "required" })
+                </div>
+                @if (Model.tblehicletype.ID == 1)
+                {
+                <label class="label col-md-3 control-label" style="font-size:19px;">Body Type</label>
+                <div class="col-md-9">
+                 @Html.DropDownListFor(c => c.tblvehicle.Body_type, (SelectList)ViewBag.Body_type, "Please Select", new { @class = "form-control", @required = "required" })
+                </div>
+                <label class="label col-md-3 control-label" style="font-size:19px;">Doors</label>
+                <div class="col-md-9">
+                    @Html.TextBoxFor(c => c.tblcar.Doors, new { @class = "form-control", @placeholder = "Enter No of Doors", @id = "txtdoors", @type = "number",@required="required" })
+                    <small style="color:gray">Enter only Number</small>
+                </div>
+                <label class="label col-md-3 control-label" style="font-size:19px;">Wheels</label>
+                <div class="col-md-9">
+                    @Html.TextBoxFor(c => c.tblcar.Wheels, new { @class = "form-control", @placeholder = "Enter No of wheels", @id = "txtwheels", @type = "number", @required = "required" })
+                    <small style="color:gray">Enter only Number</small>
+                </div>
+                <label class="label col-md-3 control-label" style="font-size:19px;">No of Seat</label>
+                <div class="col-md-9">
+                    @Html.TextBoxFor(c => c.tblcar.No_of_seat, new { @class = "form-control", @placeholder = "Enter No of Seat", @id = "txtseat",@type="number", @required = "required" })
+                    <small style="color:gray">Enter only Number</small>
+                </div>
+                }
+                @if (Model.tblehicletype.ID == 2)
+                {
+                    <label class="label col-md-3 control-label" style="font-size:19px;">Type Of Start</label>
+                    <div class="col-md-9">
+                        @Html.DropDownListFor(c => c.tblbike.Type_of_start,
+                          ((List<string>)ViewBag.Type_of_start).Select(c => new SelectListItem { Text = c, Value = c }), "Please select", new { @class = "form-control", @required = "required" })
+                    </div>
+
+                }
+              @Html.HiddenFor(c => c.tblehicletype.ID, new { @id = "vehicletypeid" })
+                <button type="submit" class="btn btn-info">Submit</button>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+   
+    
+}
+<script>
+    @*function Submit(element)
+    {
+     
+        var tblvehicle={Vehicle_type_id:document.getElementById("vehicletypeid").value, 
+            Make:document.getElementById("txtmake").value,ModelNo:document.getElementById("txtmodel").value
+        }
+        var data={@Model.tblvehicle.ModelNo:$("#tblvehicle_Make").val};
+        alert(data)
+    }*@
+</script>

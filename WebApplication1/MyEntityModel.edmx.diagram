@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d55dd8facb61404cb82c13599d06096a" Name="Diagram1">
+        <EntityTypeShape EntityType="vmcModel.tbl_vehicle" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="vmcModel.tbl_vehicletype" Width="1.5" PointX="0.75" PointY="1.375" />
+        <AssociationConnector Association="vmcModel.FK__tbl_vehic__Vehic__36B12243" />
+        <EntityTypeShape EntityType="vmcModel.tbl_Car" Width="1.5" PointX="5.5" PointY="1.75" />
+        <EntityTypeShape EntityType="vmcModel.tbl_bike" Width="1.5" PointX="3" PointY="4.125" />
+        <AssociationConnector Association="vmcModel.FK__tbl_bike__Vehicl__70DDC3D8" />
+        <AssociationConnector Association="vmcModel.FK__tbl_Car__Vehicle__6FE99F9F" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

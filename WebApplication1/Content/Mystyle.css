@@ -1,0 +1,60 @@
+﻿.createvlabel{
+    float:left;
+}
+.createspan{
+    display:block;
+    overflow:hidden;
+    padding:0 4px 0 4px;
+}
+.createtxtbox{
+    width:100%;
+}
+.tblthead{
+    background-color:black;
+    color:white;
+}
+*{
+    margin:0px;
+    padding:0px;
+
+}
+body {
+   
+    background-image: url('../image/file.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Times New Roman;
+}
+h1{
+    font-size:40px;
+    color:gray;
+    margin-top:20px;
+    margin-bottom:30px;
+}
+.label{
+    font-size:19px;
+    margin-top:20px;
+    font-weight:normal;
+}
+.form-control{
+    background:rgba(255,255,,255,0.2);
+    border:0px;
+    border-radius:0px;
+    border-bottom:2px solid white;
+    font-size:21px;
+    color:white;
+    margin-top:20px;
+
+}
+.btn-info{
+    margin-top:30px;
+    margin-left:150px;
+    width:180px;
+    font-size:19px;
+    border-radius:1000px;
+}
+.col-md-6{
+    background:rgba(0,0,0,0.2);
+    height:660px;
+    box-shadow:-1px 1px 60px 10px black inset;
+}
